@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index View: Articles</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
     <h1>Index View</h1>
-</body>
+    <hr />
+
+    <div>
+        <%if(articles.length){%>
+        <% for (let i=0;i<articles.length;i++){ %>
+            <a href="/articles/<%=articles[i].id%>"><%=articles[i].title%></a>
+        <% } %>
+        <%}else {%>
+            <em>No articles yet</em>
+        <%}%>
+    </div>
+    <hr />
+    <a href="/">Project Home</a> <br>
+    <a href="/articles/new">Add Article</a>
+  </body>
 </html>
