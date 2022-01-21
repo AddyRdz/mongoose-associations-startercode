@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit View: Authors</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>Edit View</h1>
+    <form action="/authors/<%=author.id%>?_method=PUT" method="POST">
+      <legend>
+        <label>
+          Full Name: <br />
+          <input
+            type="text"
+            name="fullName"
+            value="<%=author.fullName%>"
+            required
+            placeholder="enter author's full name (first last)"
+          />
+        </label>
+        <br /><br />
+      </legend>
+      <input type="submit" value="Edit Author" />
+    </form>
+    <a href="/authors/<%=author.id%>">Back to author page</a><br />
+    <form action="/authors/<%=author.id%>?_method=DELETE" method="POST">
+      <button type="submit">Delete this author</button><br />
+    </form>
+  </body>
+</html>
